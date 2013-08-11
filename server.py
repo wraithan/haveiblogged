@@ -39,7 +39,10 @@ def status():
     for post in res['posts']:
         posted_in.update(post['categories'].keys())
 
-    return json.dumps(dict([(cat, cat in posted_in) for cat in categories]))
+    return json.dumps({
+        'since': start.isoformat(),
+        'categories': dict([(cat, cat in posted_in) for cat in categories])
+    })
 
 
 if __name__ == '__main__':

@@ -2,7 +2,8 @@ var my_data = null
 
 $(function() {
   $.getJSON('/status.json', function(data) {
-    $.each(data, function(cat, blogged) {
+    $('#header').append($('<small>', {text: ' (since ' + data.since + ')'}))
+    $.each(data.categories, function(cat, blogged) {
       var block = $('<div>', {
         class: 'col-lg-4 btn'
       })
