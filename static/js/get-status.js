@@ -7,13 +7,17 @@ $(function() {
       var block = $('<div>', {
         class: 'col-lg-4 btn'
       })
-      block.append($('<h2>', {
+      var link = $('<a>', {
+        href: 'http://blog.wraithan.net/category/' + cat + '/'
+      , class: 'btn btn-block'
+      }).append($('<h2>', {
         text: cat
       }))
+      block.append(link)
       if (blogged) {
-        block.addClass('btn-success')
+        link.addClass('btn-success')
       } else {
-        block.addClass('btn-danger')
+        link.addClass('btn-danger')
       }
       block.appendTo($('#status-display'))
     })
