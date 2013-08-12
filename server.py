@@ -2,7 +2,7 @@
 import json
 import logging
 import os
-from datetime import date
+from datetime import date, timedelta
 
 from flask import Flask
 
@@ -32,7 +32,7 @@ def status():
     categories = ('Gaming', 'Life', 'Programming')
     posted_in = set()
     today = date.today()
-    start = today.replace(day=today.day-today.isoweekday())
+    start = today - timedelta(days=today.isoweekday())
 
     res = wp.get('sites/{site_id}/posts',
                  params={'after': start.isoformat()}).json()
