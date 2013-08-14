@@ -32,7 +32,7 @@ def status():
     categories = ('Gaming', 'Life', 'Programming')
     posted_in = set()
     today = date.today()
-    start = today - timedelta(days=today.isoweekday())
+    start = today - timedelta(days=today.isoweekday()-1)
 
     res = wp.get('sites/{site_id}/posts',
                  params={'after': start.isoformat()}).json()

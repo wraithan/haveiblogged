@@ -5,7 +5,7 @@ $(function() {
     $('#header').append($('<small>', {text: ' (since ' + data.since + ')'}))
     $.each(data.categories, function(cat, blogged) {
       var block = $('<div>', {
-        class: 'col-lg-4 btn'
+        class: 'col-lg-4 col-md-4 col-sm-12 col-xs-12'
       })
       var link = $('<a>', {
         href: 'http://blog.wraithan.net/category/' + cat + '/'

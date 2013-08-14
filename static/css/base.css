@@ -1,3 +1,7 @@
 .btn {
 	padding: 15px 0;
 }
+
+#status-display div {
+	padding: 0;
+}
