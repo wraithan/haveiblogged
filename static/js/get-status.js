@@ -28,9 +28,7 @@ window.onload = function() {
         , href: 'http://blog.wraithan.net/category/' + cat + '/'
         })
 
-        link.appendChild(make_element('h2', {
-          textContent: cat
-        }))
+        link.appendChild(make_element('h2', {textContent: cat}))
 
         if (data.categories[cat]) {
           link.className += ' btn-success'
